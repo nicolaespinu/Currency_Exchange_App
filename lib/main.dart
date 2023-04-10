@@ -37,9 +37,7 @@ class _CurrencyConvertorState extends State<CurrencyConvertor> {
 
   void _convertingEURToRON() {
     setState(() {
-      _inputAmount.text == '.'
-          ? resultAmount = 0
-          : resultAmount = double.tryParse(_inputAmount.text);
+      _inputAmount.text == '.' ? resultAmount = 0 : resultAmount = double.tryParse(_inputAmount.text);
 
       if (resultAmount == null) {
         errorMessage = 'please enter valid number';
@@ -64,8 +62,7 @@ class _CurrencyConvertorState extends State<CurrencyConvertor> {
             child: TextField(
               controller: _inputAmount,
               decoration: InputDecoration(
-                  hintText: 'enter the amount in EUR',
-                  errorText: errorMessage.isEmpty ? null : errorMessage),
+                  hintText: 'enter the amount in EUR', errorText: errorMessage.isEmpty ? null : errorMessage),
             ),
           ),
           MaterialButton(
